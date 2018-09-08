@@ -126,7 +126,8 @@ $(document).ready(function()
 
 	function initGoogleMap()
 	{
-		var myLatlng = new google.maps.LatLng(34.043238,-118.258338);
+		var myLatlng = new google.maps.LatLng(22.3419702,73.1825717);
+		var uluru = {lat: 22.3419702, lng: 73.1825717};
     	var mapOptions = 
     	{
     		center: myLatlng,
@@ -141,7 +142,7 @@ $(document).ready(function()
 			},
 			mapTypeControl: false,
 			scaleControl: false,
-			streetViewControl: false,
+			streetViewControl: true,
 			rotateControl: false,
 			fullscreenControl: true,
 			styles:
@@ -250,6 +251,7 @@ $(document).ready(function()
 
     	// Initialize a map with options
     	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+		var marker = new google.maps.Marker({position: uluru, map: map});
     	map.panBy(0, 0);
 
 		// Re-center map after window resize
